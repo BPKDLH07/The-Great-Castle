@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Time_System : MonoBehaviour {
-
-
+public class Time_System: MonoBehaviour {
+	
     //Aqui ira el sistema de tiempo, que es constante durante el juego y funciona de manera independiente. -gonzalo
+	My_Time myTime = new My_Time(40);
 
-	// Use this for initialization
-	void Start () {
-		
+	public float LessTime(){
+		myTime.Decrease(Time.deltaTime);
+		return myTime.Timer;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
