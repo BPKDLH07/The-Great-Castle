@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Model : MonoBehaviour {
+public class Enemy_Model : Character_Model {
 
 
     //aqui iran los metodos del comportamiento del enemigo. (No 100% seguro) -gonzalo
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //Daniel
+    Enemy_Model() {
+
+    }
+
+    Enemy_Model(int HP) {
+        this.HP = HP;
+    }
+
+    void EnemyAuch()
+    {
+        HP--;
+    }
+    //Daniel
+
 }
