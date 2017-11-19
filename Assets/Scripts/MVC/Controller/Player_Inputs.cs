@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Inputs : MonoBehaviour {
+public class Player_Inputs : IBeginDragHandler, IDragHandler, IEndDragHandler
+{
 
     //Aqui iran los inputs de eventos tactiles. Controles del jugador que accederán a los métodos del personaje (los que realizan las acciones) -gonzalo
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-}
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+
+        //Debug.Log(eventData.position);
+    }
+
+    public void OnEndDrag(PointerEventData eventData) //movimiento
+    {
+        Vector2 delta = eventData.delta;
+        if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
+        {
+            if (delta.x > 0)
+                Debug.Log("Swipe Right");
+            else if (delta.x < 0)
+                Debug.Log("Swipe Left");
+        }
+
+
+    }
+
+    }

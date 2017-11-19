@@ -16,4 +16,20 @@ public class Enemy_Controller : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void Patrol_Input()
+    {
+
+        //estado normal, despues de spawnear
+
+    }
+
+    void Follow_Input()
+    {
+
+
+        //cuando detecta al player
+
+    }
+
 }
