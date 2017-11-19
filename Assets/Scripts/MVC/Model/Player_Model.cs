@@ -10,11 +10,11 @@ public class Player_Model: Character_Model {
     //Daniel
     public string name;
 
-    Player_Model() {
+    public Player_Model() {
         
     }
 
-    Player_Model(int HP,  string name) {
+    public Player_Model(int HP,  string name): base(HP) {
         this.HP=HP;
         this.name = name;
     }

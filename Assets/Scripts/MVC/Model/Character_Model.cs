@@ -16,6 +16,14 @@ public abstract class Character_Model {
             value = _hp;
         }
     }
+
+    public Character_Model() {
+
+    }
+
+    public Character_Model(int HP) {
+        this.HP = HP;
+    }
     //Daniel
     
 
