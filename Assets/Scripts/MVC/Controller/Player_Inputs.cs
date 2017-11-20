@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player_Inputs : IBeginDragHandler, IDragHandler, IEndDragHandler
 {

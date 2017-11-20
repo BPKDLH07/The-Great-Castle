@@ -10,6 +10,9 @@ public class Time_System: MonoBehaviour {
 
     public RectTransform timerBar;
 
+
+
+
     
     //Score de Timer
     public float LessTime(){
