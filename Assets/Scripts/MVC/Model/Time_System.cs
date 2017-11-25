@@ -5,14 +5,12 @@ using UnityEngine;
 public class Time_System: MonoBehaviour {
 	
     //Aqui ira el sistema de tiempo, que es constante durante el juego y funciona de manera independiente. -gonzalo
+
+
 	My_Time myTimeScore = new My_Time(0);
     My_Time myTimer = new My_Time(100);
 
     public RectTransform timerBar;
-
-
-
-
     
     //Score de Timer
     public float LessTime(){

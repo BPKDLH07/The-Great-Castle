@@ -2,19 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level_Manager : MonoBehaviour {
+public class Level_Manager {
 
 
     //Este es el generador de niveles. Aqui iran los metodos que instanciaran nivel tras nivel, con los parametros necesarios. -gonzalo
+    //Daniel Arredondo
+    public enum TileType {
+        ModuA1, ModuB1, ModuC1, ModuD1,
+        ModuA2, ModuB2, ModuC2, ModuD2,
+        ModuA3, ModuB3, ModuC3, ModuD3
+    }
 
+    public TileType[] pattern=new TileType[4];
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public void Order1() {
+        pattern[0] = TileType.ModuA2;
+        pattern[1] = TileType.ModuB1;
+        pattern[2] = TileType.ModuC1;
+        pattern[3] = TileType.ModuD3;
+
+    }
+    //Daniel Arredondo
+
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

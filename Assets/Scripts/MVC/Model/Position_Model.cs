@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Position_Model {
 
+    //Daniel Arredondo
 	//Valor X
 	private float _x;
 	public float X
@@ -83,5 +84,6 @@ public class Position_Model {
 	public float LessZ(){
 		return Z=Z-2;
 	}
+    //Daniel Arredondo
 
 }
