@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour {
 
     public float timeLeft = 10f;
+    int mahTime;
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +15,11 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        mahTime = (int)timeLeft;
         DecreaseTime();
         IncreaseTime();
-	}
+        Debug.Log(mahTime);
+    }
 
 
     //baja el tiempo constantemente (funcion independiente)
@@ -36,8 +39,9 @@ public class Timer : MonoBehaviour {
         //input es temporal para testear
         if (Input.GetKeyDown(KeyCode.T))
         {
-            timeLeft = timeLeft + 10.0f;
+            mahTime = mahTime + 10;
             Debug.Log("time added");
+            
 
         }
 

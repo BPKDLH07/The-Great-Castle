@@ -22,8 +22,13 @@ public class Player_Model: Character_Model {
     void Auch() {
         HP--;
     }
+
+    public override string ToString()
+    {
+        return "Player: "+name;
+    }
     //Daniel
 
 
-    	
+
 }
