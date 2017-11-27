@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager {
+public class GameManager: MonoBehaviour {
 
 public Timer Timor = new Timer();
 public Player_Model Player =new Player_Model(1,"Nombre");
