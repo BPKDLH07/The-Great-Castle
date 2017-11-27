@@ -17,10 +17,19 @@ public class Enemy_Controller : MonoBehaviour {
 		
 	}
 
+
+
+    void Idle_Input(){
+
+
+
+
+    }
+
     void Patrol_Input()
     {
 
-        //estado normal, despues de spawnear
+     
 
     }
 
@@ -28,7 +37,7 @@ public class Enemy_Controller : MonoBehaviour {
     {
 
 
-        //cuando detecta al player
+      
 
     }
 

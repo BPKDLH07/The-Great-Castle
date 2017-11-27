@@ -23,28 +23,28 @@ public class Player_View {
 		thePosition.MoreZ();
         myVector.z=myVector.z+thePosition.Z;
         thePosition.Z = 0;
-        Debug.Log(myVector);
+        //Debug.Log(myVector);
 	}
 
 	public void MovementBack(){
 		thePosition.LessZ();
         myVector.z = myVector.z + thePosition.Z;
         thePosition.Z = 0;
-        Debug.Log(myVector);
+        //Debug.Log(myVector);
     }
 
 	public void MovementLeft(){
 		thePosition.LessX();
         myVector.x = myVector.x + thePosition.X;
         thePosition.X = 0;
-        Debug.Log(myVector);
+       // Debug.Log(myVector);
     }
 
 	public void MovementRight(){
 		thePosition.MoreX();
         myVector.x = myVector.x + thePosition.X;
         thePosition.X = 0;
-        Debug.Log(myVector);
+        //Debug.Log(myVector);
     }
 
 	public void NotMovement(){
