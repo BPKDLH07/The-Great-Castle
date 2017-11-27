@@ -9,7 +9,9 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     //Aqui iran los inputs de eventos tactiles. Controles del jugador que accederán a los métodos del personaje (los que realizan las acciones) -gonzalo
 
     Player_View playerView = new Player_View();
+    public anim_manager animManager;
     public GameObject thePlayer;
+
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     void Update()
     {
         thePlayer.gameObject.transform.position = playerView.myVector;
-
+        animManager.NotAttack();
 
     }
 
@@ -38,10 +40,10 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnDrag(PointerEventData eventData)
     {
 
-        //Debug.Log(eventData.position);
+    
     }
 
-    public void OnEndDrag(PointerEventData eventData) //movimiento
+    public void OnEndDrag(PointerEventData eventData) 
     {
         Vector2 delta = eventData.delta;
 
@@ -76,8 +78,14 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         }
 
-        
+            
 
+
+    }
+
+    public void attack(){
+
+       animManager.Attack();
 
     }
 

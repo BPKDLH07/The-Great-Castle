@@ -7,6 +7,13 @@ public class Player_View {
 	public Vector3 myVector;
 	Position_Model thePosition=new Position_Model(0,0,0);
 
+
+public void Start(){
+
+	
+	
+}
+
 	public void SetPos(){
 		myVector=new Vector3(thePosition.X,thePosition.Y,thePosition.Z);
 	}
