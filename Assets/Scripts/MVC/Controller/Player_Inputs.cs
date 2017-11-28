@@ -11,12 +11,13 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     Player_View playerView = new Player_View();
     public anim_manager animManager;
     public GameObject thePlayer;
+    public GameObject PlayerChild;
 
 
     void Start()
     {
         playerView.SetPos();
-        playerView.myVector = thePlayer.transform.position;
+        playerView.myVector = thePlayer.transform.position;       
 
 
     }
@@ -24,7 +25,8 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
   
     void Update()
     {
-        thePlayer.gameObject.transform.position = playerView.myVector;
+        thePlayer.gameObject.transform.position = playerView.myVector;        
+        PlayerChild.transform.rotation=playerView.myQuaternion;
         animManager.NotAttack();
 
     }
@@ -51,7 +53,7 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
             if (delta.x > 0){
-                playerView.MovementRight();
+                playerView.MovementRight();                
                 Debug.Log("swipe right");
 
             }
@@ -75,11 +77,7 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 Debug.Log("swipe down");
 
             }
-
-        }
-
-            
-
+        }       
 
     }
 
@@ -88,5 +86,10 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
        animManager.Attack();
 
     }
+
+    //Toque por Necesidad el Controlador agregando el método de Jump al Input. -Daniel    
+    public void Jumping(){
+         playerView.MovementJump();
+     }
 
     }

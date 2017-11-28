@@ -3,33 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_View {
-	public Animator pAnim;
+
+	public enum PlayerViewFront{
+		front, back, left, right
+	}
+
 	public Vector3 myVector;
+	public Quaternion myQuaternion;	
 	Position_Model thePosition=new Position_Model(0,0,0);
+	public PlayerViewFront thePlayerFront;
 
-
-public void Start(){
-
-	
-	
-}
 
 	public void SetPos(){
 		myVector=new Vector3(thePosition.X,thePosition.Y,thePosition.Z);
-	}
-	
-	public void Attack(){
-		pAnim.SetBool("Attack",true);
-	}
-
-	public void NotAttack(){
-		pAnim.SetBool("Attack",false);
-	}
+		thePlayerFront=PlayerViewFront.front;		
+	}	
 
 	public void MovementFront(){
 		thePosition.MoreZ();
         myVector.z=myVector.z+thePosition.Z;
+		thePlayerFront=PlayerViewFront.front;
         thePosition.Z = 0;
+		myQuaternion=Quaternion.Euler(0,0,0);
         //Debug.Log(myVector);
 	}
 
@@ -37,6 +32,8 @@ public void Start(){
 		thePosition.LessZ();
         myVector.z = myVector.z + thePosition.Z;
         thePosition.Z = 0;
+		thePlayerFront=PlayerViewFront.back;
+		myQuaternion=Quaternion.Euler(0,180,0);
         //Debug.Log(myVector);
     }
 
@@ -44,6 +41,8 @@ public void Start(){
 		thePosition.LessX();
         myVector.x = myVector.x + thePosition.X;
         thePosition.X = 0;
+		thePlayerFront=PlayerViewFront.left;
+		myQuaternion=Quaternion.Euler(0,-90,0);
        // Debug.Log(myVector);
     }
 
@@ -51,8 +50,31 @@ public void Start(){
 		thePosition.MoreX();
         myVector.x = myVector.x + thePosition.X;
         thePosition.X = 0;
+		thePlayerFront=PlayerViewFront.right;
+		myQuaternion=Quaternion.Euler(0,90,0);
         //Debug.Log(myVector);
     }
+
+	public void MovementJump(){
+		thePosition.MoreY();
+		myVector.y = myVector.y + thePosition.Y;
+        thePosition.Y = 0;
+
+		switch(thePlayerFront){
+			case PlayerViewFront.front:
+				MovementFront();
+				break;
+			case PlayerViewFront.back:
+				MovementBack();
+				break;
+			case PlayerViewFront.left:
+				MovementLeft();
+				break;
+			case PlayerViewFront.right:
+				MovementRight();
+				break;
+		}
+	}
 
 	public void NotMovement(){
 		thePosition.X=0;

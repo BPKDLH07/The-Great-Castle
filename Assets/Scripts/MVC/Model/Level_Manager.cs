@@ -20,7 +20,24 @@ public class Level_Manager {
         pattern[1] = TileType.ModuB1;
         pattern[2] = TileType.ModuC1;
         pattern[3] = TileType.ModuD3;
-
+    }
+    public void Order2() {
+        pattern[0] = TileType.ModuB2;
+        pattern[1] = TileType.ModuC3;
+        pattern[2] = TileType.ModuD1;
+        pattern[3] = TileType.ModuA1;
+    }
+    public void Order3() {
+        pattern[0] = TileType.ModuD2;
+        pattern[1] = TileType.ModuA1;
+        pattern[2] = TileType.ModuB3;
+        pattern[3] = TileType.ModuC1;
+    }
+    public void Order4() {
+        pattern[0] = TileType.ModuC2;
+        pattern[1] = TileType.ModuD1;
+        pattern[2] = TileType.ModuA3;
+        pattern[3] = TileType.ModuB1;
     }
     //Daniel Arredondo
 

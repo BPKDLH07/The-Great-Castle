@@ -205,6 +205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 290894819}
+  - component: {fileID: 290894820}
   m_Layer: 0
   m_Name: LevelManagerChildren
   m_TagString: Untagged
@@ -225,6 +226,31 @@ Transform:
   m_Father: {fileID: 1776232063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290894820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290894818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bc4356c5c2fe447b7c57224fb1a92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTiles:
+  - {fileID: 1318422088828328, guid: ba066f0cbd6bbe34d88a4d2d93f17a26, type: 2}
+  - {fileID: 1942187523851870, guid: 566f5416884040741be9f9b0a926e7c3, type: 2}
+  - {fileID: 1774618809342328, guid: 619188b1623908b4991c09cdc30f82ec, type: 2}
+  - {fileID: 1733581071382892, guid: 8006a992dca231a4ebc723afcb7c593b, type: 2}
+  - {fileID: 1149515546527050, guid: 25eee035ff61fe9458d957f686477a12, type: 2}
+  - {fileID: 1008580515743960, guid: 20a3547e8c62b2d4cadd32916fc6862b, type: 2}
+  - {fileID: 1310869797811018, guid: 8b9b8ae13f50c5647843f62cc482f1b5, type: 2}
+  - {fileID: 1466880619117716, guid: d84ffa5d42a71d846b55c5cf68c9d7a3, type: 2}
+  - {fileID: 1797725415703190, guid: 8d42f1f90dda3ba4f83ea841920084e0, type: 2}
+  - {fileID: 1596082333334828, guid: 48e499f5b5971424cb7bdf0e5346c1fc, type: 2}
+  - {fileID: 1856121951300748, guid: 52dc2f34408d75547b2f5e1c12d12ec2, type: 2}
+  - {fileID: 1173523415808440, guid: e9270b8c638ea154fad9aeb6a7629e80, type: 2}
+  piece: {fileID: 0}
 --- !u!1 &1240045966
 GameObject:
   m_ObjectHideFlags: 0
