@@ -19,7 +19,11 @@ public class Timer : MonoBehaviour {
         DecreaseTime();
         IncreaseTime();
         Debug.Log(timeScore);
-    }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            IncreaseTime();
+        }
+        }
 
 
     //baja el tiempo constantemente (funcion independiente)
@@ -33,13 +37,12 @@ public class Timer : MonoBehaviour {
     void IncreaseTime()
     {
         //input es temporal para testear
-        if (Input.GetKeyDown(KeyCode.T))
-        {
+        
             timeLeft = timeLeft + 10f;
             Debug.Log("time added");
             
 
-        }
+        
 
 
     }
