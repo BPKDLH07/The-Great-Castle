@@ -27,8 +27,6 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         thePlayer.gameObject.transform.position = playerView.myVector;        
         PlayerChild.transform.rotation=playerView.myQuaternion;
-        animManager.NotAttack();
-
     }
 
 

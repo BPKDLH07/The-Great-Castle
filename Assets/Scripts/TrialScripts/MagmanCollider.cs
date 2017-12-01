@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class anim_manager : MonoBehaviour {
-	Animator anim;
+public class MagmanCollider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent <Animator> ();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-    
 
-    public void Attack(){
-
-	    anim.SetTrigger("Attack");
-
-
-    }
-
+	void OnTriggerEnter(Collider other){
+		if(other.tag=="Player"){
+			Debug.Log("Se Quemó");
+		}
+	}
 }
