@@ -7,16 +7,24 @@ public class Player_View {
 	public enum PlayerViewFront{
 		front, back, left, right
 	}
+    public enum JumpingCondition
+    {
+        canJump, cantJump, tallerPlatform
+    }
 
-	public Vector3 myVector;
-	public Quaternion myQuaternion;	
 	Position_Model thePosition=new Position_Model(0,0,0);
+
 	public PlayerViewFront thePlayerFront;
+    public JumpingCondition jumpingCondition;
+
+    public Vector3 myVector;
+    public Quaternion myQuaternion;
 
 
-	public void SetPos(){
+    public void SetPos(){
 		myVector=new Vector3(thePosition.X,thePosition.Y,thePosition.Z);
-		thePlayerFront=PlayerViewFront.front;		
+		thePlayerFront=PlayerViewFront.front;
+        jumpingCondition = JumpingCondition.canJump;	
 	}	
 
 	public void MovementFront(){
@@ -84,6 +92,8 @@ public class Player_View {
 
 	public void Falling(){
 		thePosition.LessY();
+        myVector.y = myVector.y + thePosition.Y;
+        thePosition.Y = 0;
 	}
 	
 

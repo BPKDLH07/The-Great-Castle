@@ -8,17 +8,17 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     //Aqui iran los inputs de eventos tactiles. Controles del jugador que accederán a los métodos del personaje (los que realizan las acciones) -gonzalo
 
-    Player_View playerView = new Player_View();
+    public Player_View playerView = new Player_View();
     public anim_manager animManager;
     public GameObject thePlayer;
     public GameObject PlayerChild;
+    
 
 
     void Start()
     {
         playerView.SetPos();
-        playerView.myVector = thePlayer.transform.position;       
-
+        playerView.myVector = thePlayer.transform.position;
 
     }
 
@@ -27,6 +27,7 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         thePlayer.gameObject.transform.position = playerView.myVector;        
         PlayerChild.transform.rotation=playerView.myQuaternion;
+                
     }
 
 
@@ -87,7 +88,11 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     //Toque por Necesidad el Controlador agregando el método de Jump al Input. -Daniel    
     public void Jumping(){
-         playerView.MovementJump();
+            playerView.MovementJump();           
      }
+
+    public void FallDown() {
+        playerView.Falling();
+    }
 
     }

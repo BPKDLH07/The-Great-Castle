@@ -15,31 +15,101 @@ public class Level_Manager {
 
     public TileType[] pattern=new TileType[4];
 
-    public void Order1() {
+    //if(EndTile is A3)
+    public void OrderA1() {
         pattern[0] = TileType.ModuA2;
         pattern[1] = TileType.ModuB1;
         pattern[2] = TileType.ModuC1;
         pattern[3] = TileType.ModuD3;
     }
-    public void Order2() {
+    public void OrderA2()
+    {
+        pattern[0] = TileType.ModuA2;
+        pattern[1] = TileType.ModuB1;
+        pattern[2] = TileType.ModuC3;
+        pattern[3] = TileType.ModuD1;
+    }
+    public void OrderA3()
+    {
+        pattern[0] = TileType.ModuA2;
+        pattern[1] = TileType.ModuB3;
+        pattern[2] = TileType.ModuC1;
+        pattern[3] = TileType.ModuD1;
+    }
+
+
+    //if(EndTile is B3)
+    public void OrderB1()
+    {
+        pattern[0] = TileType.ModuB2;
+        pattern[1] = TileType.ModuC1;
+        pattern[2] = TileType.ModuD1;
+        pattern[3] = TileType.ModuA3;
+    }
+    public void OrderB2()
+    {
+        pattern[0] = TileType.ModuB2;
+        pattern[1] = TileType.ModuC1;
+        pattern[2] = TileType.ModuD3;
+        pattern[3] = TileType.ModuA1;
+    }
+    public void OrderB3()
+    {
         pattern[0] = TileType.ModuB2;
         pattern[1] = TileType.ModuC3;
         pattern[2] = TileType.ModuD1;
         pattern[3] = TileType.ModuA1;
     }
-    public void Order3() {
-        pattern[0] = TileType.ModuD2;
-        pattern[1] = TileType.ModuA1;
-        pattern[2] = TileType.ModuB3;
-        pattern[3] = TileType.ModuC1;
+
+
+    //if (EndTile is C3)
+    public void OrderC1()
+    {
+        pattern[0] = TileType.ModuC2;
+        pattern[1] = TileType.ModuD1;
+        pattern[2] = TileType.ModuA1;
+        pattern[3] = TileType.ModuB3;
     }
-    public void Order4() {
+    public void OrderC2()
+    {
         pattern[0] = TileType.ModuC2;
         pattern[1] = TileType.ModuD1;
         pattern[2] = TileType.ModuA3;
         pattern[3] = TileType.ModuB1;
     }
+    public void OrderC3()
+    {
+        pattern[0] = TileType.ModuC2;
+        pattern[1] = TileType.ModuD3;
+        pattern[2] = TileType.ModuA1;
+        pattern[3] = TileType.ModuB1;
+    }
+
+
+    //if (EndTile is D3)
+    public void OrderD1()
+    {
+        pattern[0] = TileType.ModuD2;
+        pattern[1] = TileType.ModuA1;
+        pattern[2] = TileType.ModuB1;
+        pattern[3] = TileType.ModuC3;
+    }
+    public void OrderD2()//StartPattern
+    {
+        pattern[0] = TileType.ModuD2;
+        pattern[1] = TileType.ModuA1;
+        pattern[2] = TileType.ModuB3;
+        pattern[3] = TileType.ModuC1;
+    }
+    public void OrderD3()
+    {
+        pattern[0] = TileType.ModuD2;
+        pattern[1] = TileType.ModuA3;
+        pattern[2] = TileType.ModuB1;
+        pattern[3] = TileType.ModuC1;
+    }
+
     //Daniel Arredondo
 
-	
+
 }
