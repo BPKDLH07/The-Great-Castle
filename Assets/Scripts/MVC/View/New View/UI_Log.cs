@@ -36,6 +36,14 @@ public class UI_Log : MonoBehaviour {
         txtLog.text += myText + "\n";
     }
 
+    public void ExitSettingsButton() {
+        anim.SetTrigger("SettingsUp");
+    }
+
+    public void ExitScoreButton() {
+        anim.SetTrigger("ScoreDown");
+    }
+
 	public void ExitScoreNameButton() {
         anim.SetTrigger("NameExit");
         PlayerInfo();

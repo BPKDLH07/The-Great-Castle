@@ -15,7 +15,7 @@ public class TrialScriptChangeScene : MonoBehaviour {
 		
 	}
 
-	public void ChangeScene(){
-		SceneManager.LoadScene(2);
+	public void ChangeScene(int index){
+		SceneManager.LoadScene(index);
 	}
 }
