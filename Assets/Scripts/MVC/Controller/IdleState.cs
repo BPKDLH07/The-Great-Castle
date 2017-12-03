@@ -2,13 +2,13 @@
 using StateStuff;
 using System;
 
-public class PatrolState : State<Enemy_Controller>
+public class IdleState : State<Enemy_Controller>
 {
-    private static PatrolState _instance;
+    private static IdleState _instance;
 
-    private PatrolState()               //constructor para establecer el estado
+    private IdleState()               //constructor para establecer el estado
     {
-        if (_instance != null)
+        if(_instance != null)
         {
             return;
         }
@@ -16,13 +16,13 @@ public class PatrolState : State<Enemy_Controller>
         _instance = this;
     }
 
-    public static PatrolState Instance  //crear el estado y retornar su instancia
+    public static IdleState Instance  //crear el estado y retornar su instancia
     {
         get
         {
-            if (_instance == null)
+            if(_instance == null)
             {
-                new PatrolState();
+                new IdleState();
             }
 
             return _instance;
@@ -31,20 +31,25 @@ public class PatrolState : State<Enemy_Controller>
 
     public override void EnterState(Enemy_Controller _enemy)        //lo que pasa al entrar al estado
     {
-        Debug.Log("Entering PatrolState");
+        Debug.Log("Entering IdleState"); 
     }
 
     public override void ExitState(Enemy_Controller _enemy)         //lo que pasa al salir del estado
     {
-        Debug.Log("Exiting PatrolState");
+        Debug.Log("Exiting IdleState");
     }
 
     public override void UpdateState(Enemy_Controller _enemy)       //lo que pasa durante el estado
     {
-        if (!_enemy.switchState)
+
+        if (_enemy.switchState)
         {
-            _enemy.stateMachine.ChangeState(FollowState.Instance);
+            _enemy.stateMachine.ChangeState(AttackState.Instance);
         }
 
     }
+
+   
+
+
 }

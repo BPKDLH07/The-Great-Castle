@@ -2,13 +2,13 @@
 using StateStuff;
 using System;
 
-public class FollowState : State<Enemy_Controller>
+public class AttackState : State<Enemy_Controller>
 {
-    private static FollowState _instance;
+    private static AttackState _instance;
 
-    private FollowState()               //constructor para establecer el estado
+    private AttackState()               //constructor para establecer el estado
     {
-        if(_instance != null)
+        if (_instance != null)
         {
             return;
         }
@@ -16,13 +16,13 @@ public class FollowState : State<Enemy_Controller>
         _instance = this;
     }
 
-    public static FollowState Instance  //crear el estado y retornar su instancia
+    public static AttackState Instance  //crear el estado y retornar su instancia
     {
         get
         {
-            if(_instance == null)
+            if (_instance == null)
             {
-                new FollowState();
+                new AttackState();
             }
 
             return _instance;
@@ -31,19 +31,24 @@ public class FollowState : State<Enemy_Controller>
 
     public override void EnterState(Enemy_Controller _enemy)        //lo que pasa al entrar al estado
     {
-        Debug.Log("Entering FollowState"); 
+        Debug.Log("Entering AttackState");
     }
 
     public override void ExitState(Enemy_Controller _enemy)         //lo que pasa al salir del estado
     {
-        Debug.Log("Exiting FollowState");
+        Debug.Log("Exiting AttackState");
     }
 
     public override void UpdateState(Enemy_Controller _enemy)       //lo que pasa durante el estado
     {
-        if (_enemy.switchState)
+
+
+
+
+
+        if (!_enemy.switchState)
         {
-            _enemy.stateMachine.ChangeState(PatrolState.Instance);
+            _enemy.stateMachine.ChangeState(IdleState.Instance);
         }
 
     }
