@@ -5,7 +5,7 @@ using StateStuff;
 
 public class Enemy_Controller : MonoBehaviour {
 
-    Enemy_View enemy = new Enemy_View();
+    public Enemy_View enemy = new Enemy_View();
     public float enemyTimer = 5f;
 
     public bool switchState = false;
@@ -29,15 +29,6 @@ private void Start()
 
         this.gameObject.transform.position = enemy.charaVector;
 
-        
-
-
-
-        if (Input.GetKeyDown(KeyCode.F))                    //input temporal para cambiar de estados (testeo)
-        {
-            switchState = !switchState;
-
-        }
 
         stateMachine.Update();
     }
