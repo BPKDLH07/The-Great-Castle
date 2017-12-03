@@ -2,52 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_View {
-    public enum AdvancingFront {
-        EnemyFront, EnemyLeft, EnemyRight, EnemyBack
-    }
-    public AdvancingFront enemyAdvancingFront;
+public class Enemy_View: Character_View {
+    public CharacterViewFront theEnemyFront;
     public bool enemyAdvance;
-    Position_Model enemyPos = new Position_Model(0,0,0);
-    public Vector3 enemyVector;
-    public Quaternion enemyQuaternion;
 
-    public void SetPos() {
-        enemyVector = new Vector3(enemyPos.X, enemyPos.Y, enemyPos.Z);
-    }
-
-    //Posiblemente a este script lo cambie heredando tanto Enemy_View como Player_View de un Script que apodaré "Character_View"
-
-    public void EnemyMoveFront() {   
-        enemyPos.MoreZ();
-        enemyVector.z = enemyVector.z + enemyPos.Z;
-        enemyAdvancingFront = AdvancingFront.EnemyFront;
-        enemyPos.Z = 0;
-        enemyQuaternion = Quaternion.Euler(0, 0, 0);    
-}
-
-    public void EnemyMoveLeft()
+    public override void SetPos()
     {
-        enemyPos.LessX();
-        enemyVector.x = enemyVector.x + enemyPos.X;
-        enemyAdvancingFront = AdvancingFront.EnemyLeft;
-        enemyPos.X = 0;
-        enemyQuaternion = Quaternion.Euler(0, 0, 0);
+        base.SetPos();
+        theEnemyFront = CharacterViewFront.front;
     }
-    public void EnemyMoveRight()
+
+    public override void MovementFront()
     {
-        enemyPos.MoreX();
-        enemyVector.x = enemyVector.x + enemyPos.X;
-        enemyAdvancingFront = AdvancingFront.EnemyRight;
-        enemyPos.X = 0;
-        enemyQuaternion = Quaternion.Euler(0, 0, 0);
+        base.MovementFront();
+        theEnemyFront = CharacterViewFront.front;
     }
-    public void EnemyMoveBack()
+
+    public override void MovementBack()
     {
-        enemyPos.LessZ();
-        enemyVector.z = enemyVector.z + enemyPos.Z;
-        enemyAdvancingFront = AdvancingFront.EnemyFront;
-        enemyPos.Z = 0;
-        enemyQuaternion = Quaternion.Euler(0, 180, 0);
+        base.MovementBack();
+        theEnemyFront = CharacterViewFront.back;
     }
+
+    public override void MovementLeft()
+    {
+        base.MovementLeft();
+        theEnemyFront = CharacterViewFront.left;
+    }
+
+    public override void MovementRight()
+    {
+        base.MovementRight();
+        theEnemyFront = CharacterViewFront.right;
+    }
+
+
 }

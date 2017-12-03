@@ -18,15 +18,15 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     void Start()
     {
         playerView.SetPos();
-        playerView.myVector = thePlayer.transform.position;
+        playerView.charaVector = thePlayer.transform.position;
 
     }
 
   
     void Update()
     {
-        thePlayer.gameObject.transform.position = playerView.myVector;        
-        PlayerChild.transform.rotation=playerView.myQuaternion;
+        thePlayer.gameObject.transform.position = playerView.charaVector;        
+        PlayerChild.transform.rotation=playerView.charaRot;
                 
     }
 
