@@ -39,10 +39,12 @@ private void Start()
     {
         if (other.tag == "Player")
         {
-            switchState = !switchState;
+            switchState = !switchState;     
         }
 
     }
+
+
 
     public void OnTriggerExit(Collider other)
     {

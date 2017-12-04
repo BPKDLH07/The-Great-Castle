@@ -6,7 +6,7 @@ public class AttackState : State<Enemy_Controller>
 {
     private static AttackState _instance;
 
-    Enemy_Controller enemyControl = new Enemy_Controller();
+    Enemy_Controller enemyControl;
 
 
     private AttackState()               //constructor para establecer el estado
@@ -46,18 +46,47 @@ public class AttackState : State<Enemy_Controller>
 
     public override void UpdateState(Enemy_Controller _enemy)       //lo que pasa durante el estado
     {
-        enemyControl.enemy.SetPos();
 
+
+        enemyControl = GameObject.Find("EnemyTrial").GetComponent<Enemy_Controller>();                //Nombre del objeto que tiene el script).GetComponent<Enemy_Controller>();
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-           enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.front;
-           enemyControl.enemy.MovementFront();
+            enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.front;
         }
 
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.back;
+        }
 
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.left;
+        }
 
-        if (!_enemy.switchState)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.right;
+        }
+
+        switch (enemyControl.enemy.theEnemyFront)
+        {
+            case Enemy_View.CharacterViewFront.front:
+                enemyControl.enemy.MovementFront();
+                break;
+            case Enemy_View.CharacterViewFront.back:
+                enemyControl.enemy.MovementBack();
+                break;
+            case Enemy_View.CharacterViewFront.left:
+                enemyControl.enemy.MovementLeft();
+                break;
+            case Enemy_View.CharacterViewFront.right:
+                enemyControl.enemy.MovementRight();
+                break;
+        }
+
+                if (!_enemy.switchState)
         {
             _enemy.stateMachine.ChangeState(IdleState.Instance);
         }
