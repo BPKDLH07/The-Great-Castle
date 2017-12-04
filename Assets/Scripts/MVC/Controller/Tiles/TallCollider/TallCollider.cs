@@ -5,7 +5,7 @@ using UnityEngine;
 public class TallCollider : MonoBehaviour {
     [SerializeField]
     Player_Inputs playerInputs;
-    Player_View colliderPlayer = new Player_View();
+//    Player_View colliderPlayer = new Player_View();
 
 	// Use this for initialization
 	void Start () {

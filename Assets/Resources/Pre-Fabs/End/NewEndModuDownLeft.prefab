@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 65108883444864456}
   - component: {fileID: 23029193717349484}
   - component: {fileID: 114488405636725296}
+  - component: {fileID: 114032675297593816}
   m_Layer: 0
   m_Name: EndPlatform
   m_TagString: Untagged
@@ -3715,6 +3716,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322146d5812e5b844a4cf9dce5d0d0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114032675297593816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427789779985512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc373d70c048af499f0dc160b80a24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  levelview: {fileID: 0}
 --- !u!114 &114066646259619194
 MonoBehaviour:
   m_ObjectHideFlags: 1
