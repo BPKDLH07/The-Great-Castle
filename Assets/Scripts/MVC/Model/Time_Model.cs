@@ -50,7 +50,7 @@ public class Time_Model {
 
     public void LessTimeBar()
     {
-        TimeBar=TimeBar-0.3f;
+        TimeBar=TimeBar-0.05f;
     }
 
     public void MoreTimeBar()
@@ -60,6 +60,10 @@ public class Time_Model {
 
     public void TimePoint() {
         TimeScore = TimeScore + 0.5f;
+    }
+
+    public void PointBonus(){
+        TimeScore = TimeScore + 25f;
     }
 
 

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class anim_manager : MonoBehaviour {
 	Animator anim;
-
+	[SerializeField]
+	GameObject swordTrigger;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent <Animator> ();
@@ -22,5 +23,15 @@ public class anim_manager : MonoBehaviour {
 
 
     }
+
+	public void AttackTrigger(){
+		swordTrigger.SetActive(true);
+
+	}
+
+	public void NotAttackTrigger(){
+		swordTrigger.SetActive(false);
+
+	}
 
 }

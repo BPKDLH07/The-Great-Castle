@@ -1,22 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MagmanCollider : MonoBehaviour {
 
+	GameManager theGameManager;
+
 	// Use this for initialization
 	void Start () {
-		
+		theGameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+
+
 	}
 
 	void OnTriggerEnter(Collider other){
 		if(other.tag=="Player"){
-			Debug.Log("Se Quemó");
+			theGameManager.Player.Auch();
 		}
 	}
 }

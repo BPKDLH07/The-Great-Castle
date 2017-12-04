@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FallDownCollider : MonoBehaviour {
 
@@ -12,10 +10,15 @@ public class FallDownCollider : MonoBehaviour {
 
 	[SerializeField]
 	bool startFalling;
+
+	GameManager theGameManager;
+
 	// Use this for initialization
 	void Start () {
 		withthePlayer=false;
 		startFalling=false;
+		theGameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
+
 	}
 	
 	// Update is called once per frame
@@ -48,6 +51,7 @@ public class FallDownCollider : MonoBehaviour {
 		else 
 		if(theDelta<=0 && withthePlayer==true){
 			Debug.Log("Plataforma se cayó con Player");
+			theGameManager.Player.Auch();
 		}		
 	}
 

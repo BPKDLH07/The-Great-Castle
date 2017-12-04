@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - End
+  - sword
   layers:
   - Default
   - TransparentFX

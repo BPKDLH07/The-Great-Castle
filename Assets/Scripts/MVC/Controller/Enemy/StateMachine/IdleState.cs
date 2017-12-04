@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using StateStuff;
-using System;
 
 public class IdleState : State<Enemy_Controller>
 {

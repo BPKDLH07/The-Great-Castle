@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelControllerD : MonoBehaviour {
 
@@ -9,6 +7,7 @@ public class LevelControllerD : MonoBehaviour {
     [SerializeField]
     Level_View levelview;
     
+    GameManager theGameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +30,9 @@ public class LevelControllerD : MonoBehaviour {
 
         levelview = GameObject.Find("LevelManagerChildren").GetComponent<Level_View>();
 
+         theGameManager = GameObject.Find("GameManager").GetComponent<GameManager>();   
+
+
     }
 
     void Update () {
@@ -41,6 +43,8 @@ public class LevelControllerD : MonoBehaviour {
     {
         if (other.tag == "Player")
         {   
+           theGameManager.theTime.MoreTimeBar();
+
             levelview.thePattern.OrderD1();
             levelview.TilesInstance();
 
