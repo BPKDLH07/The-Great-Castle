@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 65240323131318536}
   - component: {fileID: 23564813827691606}
   - component: {fileID: 114502424848224518}
+  - component: {fileID: 114892605677833904}
   m_Layer: 0
   m_Name: EndPlatform
   m_TagString: Untagged
@@ -3642,6 +3643,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInputs: {fileID: 0}
+--- !u!114 &114892605677833904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417583802887734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc25cf64cd020804fb9931f25ced5e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  levelview: {fileID: 0}
 --- !u!114 &114893154696945112
 MonoBehaviour:
   m_ObjectHideFlags: 1
