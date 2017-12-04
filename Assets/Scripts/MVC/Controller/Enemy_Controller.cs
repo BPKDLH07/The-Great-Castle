@@ -6,7 +6,7 @@ using StateStuff;
 public class Enemy_Controller : MonoBehaviour {
 
     public Enemy_View enemy = new Enemy_View();
-    public float enemyTimer = 5f;
+    public float trialTimer = 5f;
 
     public bool switchState = false;
 
@@ -31,9 +31,22 @@ private void Start()
 
         stateMachine.Update();
 
-
+        if (trialTimer <= 10f)
+        {
+            Mathf.Clamp(trialTimer, 0.1f, 5f);
+            trialTimer = trialTimer - 0.2f;
+            Debug.Log("No avances...");
+            switchState = false;
+        }
+        if (trialTimer <= 0)
+        {
+            //enemy.EnemyMoveFront();
+            Debug.Log("Avanzale");
+            trialTimer = 5f;
+            switchState = true;
+        }
     }
-
+    
 
     public void OnTriggerEnter(Collider other)
     {

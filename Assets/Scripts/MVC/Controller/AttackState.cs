@@ -9,6 +9,7 @@ public class AttackState : State<Enemy_Controller>
     Enemy_Controller enemyControl;
 
 
+
     private AttackState()               //constructor para establecer el estado
     {
         if (_instance != null)
@@ -70,23 +71,9 @@ public class AttackState : State<Enemy_Controller>
             enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.right;
         }
 
-        switch (enemyControl.enemy.theEnemyFront)
-        {
-            case Enemy_View.CharacterViewFront.front:
-                enemyControl.enemy.MovementFront();
-                break;
-            case Enemy_View.CharacterViewFront.back:
-                enemyControl.enemy.MovementBack();
-                break;
-            case Enemy_View.CharacterViewFront.left:
-                enemyControl.enemy.MovementLeft();
-                break;
-            case Enemy_View.CharacterViewFront.right:
-                enemyControl.enemy.MovementRight();
-                break;
-        }
+       
 
-                if (!_enemy.switchState)
+        if (!_enemy.switchState)
         {
             _enemy.stateMachine.ChangeState(IdleState.Instance);
         }
