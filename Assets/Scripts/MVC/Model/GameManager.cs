@@ -7,19 +7,24 @@ public class GameManager: MonoBehaviour {
 
     public bool isPlaying;
     public Time_Model theTime = new Time_Model(100f,0f);
-    public Player_Model Player =new Player_Model(1,"Nombre");
+    public Player_Model Player =new Player_Model(1,"Player");
     [SerializeField]
     RectTransform timeBar;
 
 	// Use this for initialization
 	void Start () {
-        timeBar = GameObject.Find("Image").GetComponent<RectTransform>();
-        isPlaying = false;
+        //timeBar = GameObject.Find("Image").GetComponent<RectTransform>();
+        
 	}
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        
+        if(timeBar==null){
+            timeBar = GameObject.Find("Image").GetComponent<RectTransform>();
+        }
+        
 
 
         if (isPlaying != false)
@@ -45,8 +50,8 @@ public class GameManager: MonoBehaviour {
                 Player.Auch();
             }
 
-            /*theTime.TimePoint();
-            Debug.Log(theTime.TimeScore);*/
+            theTime.TimePoint();
+            //Debug.Log(theTime.TimeScore);
 
             theTime.LessTimeBar();
             timeBar.localScale = new Vector3(theTime.TimeBar / 100f, 1, 1);
