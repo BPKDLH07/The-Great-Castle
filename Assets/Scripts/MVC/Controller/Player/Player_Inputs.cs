@@ -12,8 +12,11 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public anim_manager animManager;
     public GameObject thePlayer;
     public GameObject PlayerChild;
-    
-
+    [SerializeField] float jumpTimer = 1f;
+    public bool canMoveUp = true;
+    public bool canMoveDown = true;
+    public bool canMoveLeft = true;
+    public bool canMoveRight = true;
 
     void Start()
     {
@@ -27,7 +30,19 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         thePlayer.gameObject.transform.position = playerView.charaVector;        
         PlayerChild.transform.rotation=playerView.charaRot;
-                
+
+        if (jumpTimer <= 5 && playerView.jumpingCondition == Player_View.JumpingCondition.cantJump)
+        {
+            Mathf.Clamp(jumpTimer, 0, 2f);
+            jumpTimer = jumpTimer - 0.2f;
+
+        }
+        if (jumpTimer <= 0 && playerView.jumpingCondition == Player_View.JumpingCondition.cantJump)
+        {
+            FallDown();
+            playerView.jumpingCondition = Player_View.JumpingCondition.canJump;
+
+        }
     }
 
 
@@ -51,14 +66,14 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
-            if (delta.x > 0){
+            if (delta.x > 0 & canMoveRight == true){
                 playerView.MovementRight();                
-                Debug.Log("swipe right");
+                //Debug.Log("swipe right");
 
             }
-            else if (delta.x < 0){
+            else if (delta.x < 0 & canMoveLeft == true){
                 playerView.MovementLeft();
-                Debug.Log("swipe left");
+               // Debug.Log("swipe left");
 
             }
         }
@@ -66,14 +81,14 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (Mathf.Abs(delta.y) > Mathf.Abs(delta.x))
         {
 
-            if (delta.y > 0){
+            if (delta.y > 0 & canMoveUp == true){
                 playerView.MovementFront();
-                Debug.Log("swipe up");
+                //Debug.Log("swipe up");
 
             }
-            else if (delta.y < 0){
+            else if (delta.y < 0 & canMoveDown == true){
                 playerView.MovementBack();
-                Debug.Log("swipe down");
+                //Debug.Log("swipe down");
 
             }
         }       
@@ -87,12 +102,19 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
 
     //Toque por Necesidad el Controlador agregando el método de Jump al Input. -Daniel    
-    public void Jumping(){
-            playerView.MovementJump();           
-     }
+    public void Jumping()
+    {
+        if (playerView.jumpingCondition == Player_View.JumpingCondition.canJump)
+        {
+            playerView.MovementJump();
+            jumpTimer = 2f;
+            playerView.jumpingCondition = Player_View.JumpingCondition.cantJump;
+        }
+    }
 
-    public void FallDown() {
+    public void FallDown()
+    {
         playerView.Falling();
     }
 
-    }
+}

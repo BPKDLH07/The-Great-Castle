@@ -17,7 +17,7 @@ public class TallCollider : MonoBehaviour {
 		
 	}
 
-    /*void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
             playerInputs.playerView.jumpingCondition = Player_View.JumpingCondition.tallerPlatform;
             Debug.Log("Esta Arriba");
@@ -30,5 +30,5 @@ public class TallCollider : MonoBehaviour {
             playerInputs.playerView.jumpingCondition = Player_View.JumpingCondition.canJump;
             Debug.Log("Salió");            
         }
-    }*/
+    }
 }
