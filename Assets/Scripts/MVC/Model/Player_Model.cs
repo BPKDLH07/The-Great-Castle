@@ -9,18 +9,19 @@ public class Player_Model: Character_Model {
         
     //Daniel
     public string name;
+    
 
     public Player_Model() {
         
     }
 
-    public Player_Model(int HP,  string name): base(HP) {
-        this.HP=HP;
+    public Player_Model(int hp,  string name): base (hp) {
+        this.hp = hp;
         this.name = name;
     }
 
-    void Auch() {
-        HP--;
+    public void Auch() {
+        hp--;
     }
 
     public override string ToString()

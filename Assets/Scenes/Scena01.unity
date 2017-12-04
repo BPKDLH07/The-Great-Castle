@@ -344,9 +344,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -306.74997, y: -27}
+  m_AnchoredPosition: {x: -306.74997, y: -54.850006}
   m_SizeDelta: {x: 613.5, y: 55.7}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &242033108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,6 +787,11 @@ MonoBehaviour:
   animManager: {fileID: 1798422745}
   thePlayer: {fileID: 827958679}
   PlayerChild: {fileID: 1798422743}
+  jumpTimer: 1
+  canMoveUp: 1
+  canMoveDown: 1
+  canMoveLeft: 1
+  canMoveRight: 1
 --- !u!114 &890935765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1186,6 +1191,48 @@ Prefab:
     - {fileID: 114072753845501886, guid: 91c914eb06d465d4082cce662fe6bafc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 91c914eb06d465d4082cce662fe6bafc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1499641402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1499641404}
+  - component: {fileID: 1499641403}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1499641403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499641402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce33313e5c12eb4aa33bfdbebafb063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaying: 0
+  timeBar: {fileID: 0}
+--- !u!4 &1499641404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499641402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1694899398 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4071380406296966, guid: 91c914eb06d465d4082cce662fe6bafc,

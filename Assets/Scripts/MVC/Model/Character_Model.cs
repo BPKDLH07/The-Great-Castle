@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Character_Model {
     //Daniel
-    private int _hp;
-    public int HP
+    public int hp;
+    /*public int HP
     {
         get
         {
@@ -15,14 +15,14 @@ public abstract class Character_Model {
         {
             value = _hp;
         }
-    }
+    }*/
 
     public Character_Model() {
 
     }
 
-    public Character_Model(int HP) {
-        this.HP = HP;
+    public Character_Model(int hp) {
+        this.hp = hp;
     }
     //Daniel
     

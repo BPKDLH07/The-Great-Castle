@@ -12,13 +12,13 @@ public class Enemy_Model : Character_Model {
 
     }
 
-    Enemy_Model(int HP) {
-        this.HP = HP;
+    Enemy_Model(int hp):base(hp) {
+        this.hp = hp;
     }
 
     void EnemyAuch()
     {
-        HP--;
+        hp--;
     }
     //Daniel
 
