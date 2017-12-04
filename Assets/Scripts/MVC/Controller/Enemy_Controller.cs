@@ -12,7 +12,6 @@ public class Enemy_Controller : MonoBehaviour {
 
     public StateMachine<Enemy_Controller> stateMachine {get; set;}  
 
-
 private void Start()
     {
         stateMachine = new StateMachine<Enemy_Controller>(this);        
@@ -31,6 +30,8 @@ private void Start()
 
 
         stateMachine.Update();
+
+
     }
 
 

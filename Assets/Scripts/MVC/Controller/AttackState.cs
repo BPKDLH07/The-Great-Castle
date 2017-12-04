@@ -6,7 +6,7 @@ public class AttackState : State<Enemy_Controller>
 {
     private static AttackState _instance;
 
-    Enemy_View enemy = new Enemy_View();
+    Enemy_Controller enemyControl = new Enemy_Controller();
 
 
     private AttackState()               //constructor para establecer el estado
@@ -46,12 +46,13 @@ public class AttackState : State<Enemy_Controller>
 
     public override void UpdateState(Enemy_Controller _enemy)       //lo que pasa durante el estado
     {
-        
+        enemyControl.enemy.SetPos();
+
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            enemy.theEnemyFront = Enemy_View.CharacterViewFront.front;
-            enemy.MovementFront();
+           enemyControl.enemy.theEnemyFront = Enemy_View.CharacterViewFront.front;
+           enemyControl.enemy.MovementFront();
         }
 
 
