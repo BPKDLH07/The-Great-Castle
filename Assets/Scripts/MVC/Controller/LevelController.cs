@@ -7,7 +7,7 @@ public class LevelController : MonoBehaviour {
     [SerializeField]
     GameObject[] objects = new GameObject[4];
 
-
+    Level_View levelview;
 
 	// Use this for initialization
 	void Start () {
@@ -16,9 +16,10 @@ public class LevelController : MonoBehaviour {
         objects[2] = GameObject.Find("EndModuUpRight(Clone)");
         objects[3] = GameObject.Find("ModuDownRight(Clone)");
 
+        levelview = GameObject.Find("LevelManagerChildren").GetComponent<Level_View>();
+
     }
 
-    // Update is called once per frame
     void Update () {
 		
 	}
@@ -27,7 +28,7 @@ public class LevelController : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-
+            
             Destroy(objects[0]);
             Destroy(objects[1]);
             Destroy(objects[2]);
