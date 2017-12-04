@@ -15,7 +15,9 @@ public class Position_Model {
 		}
 		set
 		{
-			_x=value;
+			
+			_x = value;
+
 		}
 	}
 
@@ -29,7 +31,8 @@ public class Position_Model {
 		}
 		set
 		{
-			_y=value;
+			_y = value;
+
 		}
 	}
 
@@ -43,7 +46,9 @@ public class Position_Model {
 		}
 	set
 		{
-			_z=value;
+			
+			_z = value;
+
 		}	
 	}
 

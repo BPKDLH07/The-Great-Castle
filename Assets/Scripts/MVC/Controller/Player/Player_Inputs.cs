@@ -33,12 +33,14 @@ public class Player_Inputs : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             Mathf.Clamp(jumpTimer, 0, 2f);
             jumpTimer = jumpTimer - 0.2f;
+			Debug.Log ("No Saltes");
 
         }
         if (jumpTimer <= 0 && playerView.jumpingCondition == Player_View.JumpingCondition.cantJump)
         {
             FallDown();
             playerView.jumpingCondition = Player_View.JumpingCondition.canJump;
+			Debug.Log ("Puerdes satlar");
 
         }
     }

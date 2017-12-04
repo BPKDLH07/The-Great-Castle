@@ -41,16 +41,6 @@ public class GameManager: MonoBehaviour {
                 GameOver();
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                PauseGame();
-                //input temporal
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                Player.Auch();
-            }
-
             theTime.TimePoint();
             //Debug.Log(theTime.TimeScore);
 
@@ -67,7 +57,7 @@ public class GameManager: MonoBehaviour {
     }
 
     void GameOver (){
-	
+		Player.hp = 1;
 		SceneManager.LoadScene(3);
         isPlaying=false;        		
 
